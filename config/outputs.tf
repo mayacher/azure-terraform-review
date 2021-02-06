@@ -9,3 +9,4 @@ output "k8s_client_certificate" {
 output "k8s_kube_config" {
   value =  module.aks-azure-vpc.kube_config
 }
+

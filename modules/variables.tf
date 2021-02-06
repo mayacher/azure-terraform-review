@@ -21,6 +21,18 @@ variable subnets {
 variable "aks-name" {
   
 }
+
+variable "node_count" {
+
+}
+
+variable "ask_resource_name" {
+
+}
+
+variable "node_system" {
+    
+}
 variable "container_registry" {
   
 }

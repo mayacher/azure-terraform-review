@@ -19,19 +19,22 @@ terraform {
   }
 }
 
-# import from dir module (I had a bug with terraform which only worked with full path)
+
 module "aks-azure-vpc" {
   source = "/home/mayushtudio/learning/terraform-azure/modules/"
   # infrastructure config
   region = "northeurope"
   rg_name = "aks-resources"
   subnets =  {
-     "a" = "10.0.1.0/24"
-     "b" = "10.0.2.0/24"
+     "a" = "172.22.1.0/24"
+     "b" = "172.22.2.0/24"
      }
-  subnet_cidr = "10.0.0.0/16"
+  subnet_cidr = "172.22.0.0/16"
   # aks config
   aks-name = "aks-cluster-test"
+  ask_resource_name = "aks-mcdevops"
+  node_count = 2
+  node_system = "npoolsystem"
   container_registry = "mcherdevopsreg"
 
 }
